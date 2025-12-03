@@ -105,7 +105,7 @@
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 25px;
       margin-top: 30px;
     }
     
@@ -115,6 +115,9 @@
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
     
     .team-member:hover {
@@ -124,15 +127,17 @@
     
     .team-photo {
       width: 100%;
-      height: 200px;
+      height: 220px;
       overflow: hidden;
       position: relative;
+      background: #f5f5f5;
     }
     
     .team-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       transition: transform 0.5s ease;
     }
     
@@ -142,34 +147,43 @@
     
     .team-info {
       padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
     
     .team-name {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: bold;
       color: #d40000;
-      margin: 0 0 5px 0;
+      margin: 0 0 8px 0;
+      text-align: center;
     }
     
     .team-position {
       color: #1a237e;
       font-weight: bold;
-      margin: 0 0 8px 0;
-      font-size: 0.95rem;
+      margin: 0 0 10px 0;
+      font-size: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
     }
     
     .team-experience {
       color: #666;
       font-size: 0.9rem;
-      margin: 0 0 10px 0;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
+      margin: 0 0 15px 0;
+      text-align: center;
+      font-weight: bold;
     }
     
     .team-desc {
       color: #444;
       font-size: 0.9rem;
       line-height: 1.5;
+      margin-bottom: 15px;
+      flex-grow: 1;
     }
     
     .team-overlay {
@@ -183,41 +197,49 @@
       transform: translateY(100%);
       transition: transform 0.3s ease;
       font-size: 0.85rem;
+      text-align: center;
     }
     
     .team-member:hover .team-overlay {
       transform: translateY(0);
     }
     
-    .team-achievement {
-      display: inline-block;
+    .team-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    
+    .team-tag {
       background: #1a237e;
       color: white;
-      padding: 4px 8px;
-      border-radius: 4px;
+      padding: 4px 10px;
+      border-radius: 20px;
       font-size: 0.8rem;
-      margin: 5px 5px 0 0;
     }
     
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .team-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 15px;
+        gap: 20px;
       }
       
       .team-photo {
-        height: 180px;
+        height: 200px;
       }
     }
     
     @media (max-width: 480px) {
       .team-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
       
       .team-photo {
-        height: 220px;
+        height: 250px;
       }
     }
   </style>
@@ -245,7 +267,7 @@
 <!-- Our Team Section -->
 <section class="team-section">
   <h2>Meet Our Expert Team</h2>
-  <p class="team-intro">With over 100+ combined years of experience in Russian immigration, our dedicated team ensures your journey to Russia is smooth and successful.</p>
+  <p class="team-intro">With over 150+ combined years of experience in Russian immigration, our dedicated team ensures your journey to Russia is smooth and successful.</p>
   
   <div class="team-grid">
     
@@ -253,15 +275,17 @@
     <div class="team-member">
       <div class="team-photo">
         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dmitri Ivanov">
-        <div class="team-overlay">25+ years in Russian immigration</div>
+        <div class="team-overlay">Former Director at Russian Federal Migration Service</div>
       </div>
       <div class="team-info">
         <h3 class="team-name">Dmitri Ivanov</h3>
         <p class="team-position">CEO & Founder</p>
         <p class="team-experience">25+ Years Experience</p>
         <p class="team-desc">Former Director at Russian Federal Migration Service. Fluent in Russian, English, and Hindi. Helped 5,000+ foreigners obtain Russian work permits.</p>
-        <span class="team-achievement">Ex-Government</span>
-        <span class="team-achievement">Polyglot</span>
+        <div class="team-tags">
+          <span class="team-tag">Ex-Government</span>
+          <span class="team-tag">Polyglot</span>
+        </div>
       </div>
     </div>
     
@@ -276,15 +300,17 @@
         <p class="team-position">Head of Immigration Law</p>
         <p class="team-experience">18+ Years Experience</p>
         <p class="team-desc">Specialized in Russian immigration law. Ensures all applications comply with latest regulations. PhD in International Law from Moscow State University.</p>
-        <span class="team-achievement">PhD Law</span>
-        <span class="team-achievement">Compliance</span>
+        <div class="team-tags">
+          <span class="team-tag">PhD Law</span>
+          <span class="team-tag">Compliance</span>
+        </div>
       </div>
     </div>
     
     <!-- Operations Director (Russia) -->
     <div class="team-member">
       <div class="team-photo">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Alexei Sokolov">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Alexei Sokolov">
         <div class="team-overlay">Based in Moscow - 15+ years experience</div>
       </div>
       <div class="team-info">
@@ -292,15 +318,17 @@
         <p class="team-position">Operations Director (Russia)</p>
         <p class="team-experience">15+ Years Experience</p>
         <p class="team-desc">Manages all on-ground operations in Moscow. Coordinates airport pickups, accommodation, and client support services across Russia.</p>
-        <span class="team-achievement">Moscow Based</span>
-        <span class="team-achievement">Logistics</span>
+        <div class="team-tags">
+          <span class="team-tag">Moscow Based</span>
+          <span class="team-tag">Logistics</span>
+        </div>
       </div>
     </div>
     
     <!-- Senior Visa Processing Manager -->
     <div class="team-member">
       <div class="team-photo">
-        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Irina Volkova">
+        <img src="https://images.unsplash.com/photo-1551830412-4c4a2b2c3b3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Irina Volkova">
         <div class="team-overlay">Processed 3,000+ applications</div>
       </div>
       <div class="team-info">
@@ -308,15 +336,17 @@
         <p class="team-position">Senior Visa Processing Manager</p>
         <p class="team-experience">12+ Years Experience</p>
         <p class="team-desc">Expert in documentation and visa submissions. Maintains 98% approval rate. Knows every embassy procedure inside out.</p>
-        <span class="team-achievement">98% Success</span>
-        <span class="team-achievement">Documentation</span>
+        <div class="team-tags">
+          <span class="team-tag">98% Success</span>
+          <span class="team-tag">Documentation</span>
+        </div>
       </div>
     </div>
     
     <!-- Client Relations Manager (India) - INDIAN -->
     <div class="team-member">
       <div class="team-photo">
-        <img src="https://images.unsplash.com/photo-1573496359162-3c6b0c3c7a3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Rajesh Sharma">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c8b4c3b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Rajesh Sharma">
         <div class="team-overlay">Speaks Hindi, English, Russian</div>
       </div>
       <div class="team-info">
@@ -324,15 +354,17 @@
         <p class="team-position">Client Relations Manager (India)</p>
         <p class="team-experience">8+ Years Experience</p>
         <p class="team-desc">Based in Delhi office. Primary contact for Indian applicants. Fluent in Hindi, English, and Russian. Understands cultural nuances of Indian clients.</p>
-        <span class="team-achievement">Hindi Speaker</span>
-        <span class="team-achievement">India Office</span>
+        <div class="team-tags">
+          <span class="team-tag">Hindi Speaker</span>
+          <span class="team-tag">India Office</span>
+        </div>
       </div>
     </div>
     
     <!-- Job Placement Specialist -->
     <div class="team-member">
       <div class="team-photo">
-        <img src="https://images.unsplash.com/photo-1551830412-4c4a2b2c3b3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anastasia Romanova">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Anastasia Romanova">
         <div class="team-overlay">Partnerships with 200+ companies</div>
       </div>
       <div class="team-info">
@@ -340,15 +372,17 @@
         <p class="team-position">Job Placement Specialist</p>
         <p class="team-experience">10+ Years Experience</p>
         <p class="team-desc">Connects clients with 200+ partner employers across Russia. Specializes in matching skills with appropriate job opportunities.</p>
-        <span class="team-achievement">Recruitment</span>
-        <span class="team-achievement">200+ Partners</span>
+        <div class="team-tags">
+          <span class="team-tag">Recruitment</span>
+          <span class="team-tag">200+ Partners</span>
+        </div>
       </div>
     </div>
     
     <!-- Accommodation & Settlement Manager -->
     <div class="team-member">
       <div class="team-photo">
-        <img src="https://images.unsplash.com/photo-1551830412-4c4a2b2c3b3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Marina Kuznetsova">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c8b4c3b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Marina Kuznetsova">
         <div class="team-overlay">Manages 150+ accommodations</div>
       </div>
       <div class="team-info">
@@ -356,15 +390,17 @@
         <p class="team-position">Accommodation & Settlement Manager</p>
         <p class="team-experience">9+ Years Experience</p>
         <p class="team-desc">Based in Moscow. Handles housing arrangements, airport pickups, and initial settlement for all arriving clients.</p>
-        <span class="team-achievement">Housing</span>
-        <span class="team-achievement">Settlement</span>
+        <div class="team-tags">
+          <span class="team-tag">Housing</span>
+          <span class="team-tag">Settlement</span>
+        </div>
       </div>
     </div>
     
     <!-- Document Verification Officer - INDIAN -->
     <div class="team-member">
       <div class="team-photo">
-        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Priya Patel">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Priya Patel">
         <div class="team-overlay">Meticulous document checker</div>
       </div>
       <div class="team-info">
@@ -372,8 +408,10 @@
         <p class="team-position">Document Verification Officer</p>
         <p class="team-experience">6+ Years Experience</p>
         <p class="team-desc">Ensures all documents are valid and compliant. Catches errors before submission. Based in Mumbai verification center.</p>
-        <span class="team-achievement">Verification</span>
-        <span class="team-achievement">Quality Check</span>
+        <div class="team-tags">
+          <span class="team-tag">Verification</span>
+          <span class="team-tag">Quality Check</span>
+        </div>
       </div>
     </div>
     
@@ -388,15 +426,17 @@
         <p class="team-position">Finance & Payment Coordinator</p>
         <p class="team-experience">11+ Years Experience</p>
         <p class="team-desc">Manages all fee processing, invoices, and financial compliance. Ensures transparent and secure financial transactions.</p>
-        <span class="team-achievement">Finance</span>
-        <span class="team-achievement">Compliance</span>
+        <div class="team-tags">
+          <span class="team-tag">Finance</span>
+          <span class="team-tag">Compliance</span>
+        </div>
       </div>
     </div>
     
     <!-- Marketing & Outreach Manager -->
     <div class="team-member">
       <div class="team-photo">
-        <img src="https://images.unsplash.com/photo-1573497019940-1c28c8b4c3b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Katya Ivanova">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Katya Ivanova">
         <div class="team-overlay">Digital marketing expert</div>
       </div>
       <div class="team-info">
@@ -404,15 +444,17 @@
         <p class="team-position">Marketing & Outreach Manager</p>
         <p class="team-experience">7+ Years Experience</p>
         <p class="team-desc">Manages digital presence, social media, and client acquisition. Creates content in multiple languages for diverse audiences.</p>
-        <span class="team-achievement">Marketing</span>
-        <span class="team-achievement">Social Media</span>
+        <div class="team-tags">
+          <span class="team-tag">Marketing</span>
+          <span class="team-tag">Social Media</span>
+        </div>
       </div>
     </div>
     
     <!-- Customer Support Lead -->
     <div class="team-member">
       <div class="team-photo">
-        <img src="https://images.unsplash.com/photo-1573497019940-1c28c8b4c3b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Olga Petrova">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Olga Petrova">
         <div class="team-overlay">24/7 support coordinator</div>
       </div>
       <div class="team-info">
@@ -420,8 +462,10 @@
         <p class="team-position">Customer Support Lead</p>
         <p class="team-experience">8+ Years Experience</p>
         <p class="team-desc">Manages 24/7 WhatsApp and phone support team. Ensures quick response times and client satisfaction throughout the process.</p>
-        <span class="team-achievement">24/7 Support</span>
-        <span class="team-achievement">Client Care</span>
+        <div class="team-tags">
+          <span class="team-tag">24/7 Support</span>
+          <span class="team-tag">Client Care</span>
+        </div>
       </div>
     </div>
     
@@ -436,8 +480,10 @@
         <p class="team-position">Compliance Officer</p>
         <p class="team-experience">14+ Years Experience</p>
         <p class="team-desc">Ensures all processes follow Russian immigration laws and regulations. Regular liaison with government authorities.</p>
-        <span class="team-achievement">Legal</span>
-        <span class="team-achievement">Regulations</span>
+        <div class="team-tags">
+          <span class="team-tag">Legal</span>
+          <span class="team-tag">Regulations</span>
+        </div>
       </div>
     </div>
     
